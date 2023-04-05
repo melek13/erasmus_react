@@ -27,8 +27,8 @@ function Basvuru_formu() {
             <br/>
             <label type="text">Cinsiyet</label> 
             <div class="row">
-              <div class="col-5" ><input id="secim" type="radio" name="cinsiyet"/> Erkek</div>
-              <div class="col-5" ><input id="secim" type="radio" name="cinsiyet"/> Kadın</div>
+              <div class="col-5" ><input id="secim" type="radio" name="cinsiyet" value="1"/> Erkek</div>
+              <div class="col-5" ><input id="secim" type="radio" name="cinsiyet" value="2"/> Kadın</div>
             </div>
             <label type="date">Doğum Tarihi</label>
             <input type="date" placeholder="Doğum tarihinizi giriniz" aria-label="mail" id="dogum"/>

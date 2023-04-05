@@ -49,7 +49,7 @@ function Ana_sayfa(){
                     </ul> 
                                                             
                         
-                    <a href="#"><button type="button" class="btn btn-danger justify-content-end"  id="cikis_btn"  onClick={Cikis}>Çıkış</button></a>
+                    <button type="button" class="btn btn-danger justify-content-end"  id="cikis_btn"  onClick={Cikis}>Çıkış</button>
                     
                 </div>
         

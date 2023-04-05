@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom/client';
 import {Link, useNavigate} from 'react-router-dom';
 // import Sayfa from './sayfa';
 
-// import Giris from './Giris';
+import Giris from './Giris';
 import Ana_sayfa from './Ana_sayfa';
 import Kayit from './Kayit';
 import Basvuru_formu from './Basvuru_formu';
@@ -17,12 +17,15 @@ import {nav_eleman, basliklar} from './icerikler';
 
 export const Sifre_kontrol = () => {
 
+  const sayfa = ReactDOM.createRoot(document.getElementById("sayfa"));
+  const sidebar = ReactDOM.createRoot(document.getElementById("sidebar"));
+
+
   var kullanici =[(document.getElementById("mail").value), (document.getElementById("sifre1").value)];
   var sifre2 = document.getElementById("sifre2").value;
   var yazi = document.getElementById("sonuc");
   var yazi2 = document.getElementById("sonuc2");
 
-  // const navigate = useNavigate();
   
   if (kullanici[1] == sifre2) {
   
@@ -32,9 +35,12 @@ export const Sifre_kontrol = () => {
       yazi2.style.color = "green";
   
       sessionStorage.setItem("user", kullanici);
-      // setTimeout(() => {
-      //     navigate('/');
-      // }, 2000);
+      setTimeout(function () {
+        sidebar.render(
+          <Giris/>
+        )
+            
+        }, 2000)
   }
 
   else {
@@ -51,7 +57,7 @@ export const Sifre_kontrol = () => {
  //GİRİŞ KONTROL
  export const Giris_kontrol = () => { 
   
-  // const sayfa = ReactDOM.createRoot(document.getElementById("sayfa"));
+  const sayfa = ReactDOM.createRoot(document.getElementById("sayfa"));
   
 
   var kullanici = sessionStorage.getItem("user");
@@ -66,21 +72,26 @@ export const Sifre_kontrol = () => {
 
   
   if (mail == kullanici[0] && sifre == kullanici[1]) {
-    
+    isLogin = true;
 
-        isLogin = true;
-       
-
-        yazi.innerHTML = "Giriş bilgileri doğru!"; 
+    if (isLogin == "true"){
+      yazi.innerHTML = "Giriş bilgileri doğru!"; 
         yazi2.innerHTML = "Ana sayfaya yönlendiriliyorsunuz.";
         yazi.style.color = "green";                
         yazi2.style.color = "green";
 
-        // document.getElementById("sidebar").style.display = "block";
+        document.getElementById("sidebar").style.display = "none";
 
             
         sessionStorage.setItem("isLogin", isLogin);
         sessionStorage.setItem("user", kullanici);
+    }
+    
+
+        
+       
+
+        
 
 
 
@@ -104,6 +115,8 @@ export const Sifre_kontrol = () => {
 
 
 
+  }else if(kullanici == "null"){
+    alert("kullanıcı yok");
   }
 
   else {

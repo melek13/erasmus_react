@@ -62,7 +62,7 @@ function Kayit(){
         <div class="col-2"  style={{textAlign:'center', marginBottom: '31px'}}>     
           <p id="sonuc"></p>     
           <p id="sonuc2"></p>     
-          <button type="submit" class="btn btn-success" style={{backgroundColor: '#0144a8'}} onClick={() => Sifre_kontrol()}>Kayıt Ol</button>
+          <a href="#"><button type="submit" class="btn btn-success" style={{backgroundColor: '#0144a8'}} onClick={() => Sifre_kontrol()}>Kayıt Ol</button></a>
         </div>
       </div>  
     </div>

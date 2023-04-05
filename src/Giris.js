@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import logo from '../src/resimler/khas_logo2.png';
 import {Giris_kontrol} from './fonksiyonlar';
 import {Link, usenavigate} from 'react-router-dom';
+import Kayit from './Kayit';
 
 
 function Giris() {
@@ -20,12 +21,6 @@ function Giris() {
     //         }catch{}
 
     // }
-
-
-    
-
-
-
 
 
 
@@ -53,13 +48,12 @@ function Giris() {
             </form>
             <div class="row justify-content-center">
             <div class="col-2" style={{textAlign:'center', marginBottom: '31px'}}>   
-            <a href="#"><button type="submit" class="btn btn-outline-primary" onClick={() => Giris_kontrol()}  id="giris_btn">Giriş Yap</button></a><br></br><br></br>                    
+           <button type="submit" class="btn btn-outline-primary" onClick={() => Giris_kontrol()}  id="giris_btn">Giriş Yap</button><br></br><br></br>                    
             <p>
                 Hesabınız yok mu? 
             </p>
-            <h6>
-                <Link to="/kayit">Kayıt Ol!</Link>
-            </h6>
+            <a href='/Kayit.js'><button>kayıt</button></a>
+            
             </div>
             </div>  
         </div>   
